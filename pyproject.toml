@@ -1,0 +1,27 @@
+# hatch build && hatch publish
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "pha"
+dynamic = ["version"]
+description = "WIP: Dynamical systems"
+readme = "README.md"
+authors = [{ name = "HarnessLabs" }]
+requires-python = ">=3.10"
+
+[project.urls]
+Documentation = "https://github.com/harnesslabs/pha"
+
+[tool.hatch.version]
+path = "pha/__about__.py"
+
+[tool.hatch.build.targets.sdist]
+exclude = ["/.github"]
+
+[tool.hatch.build.targets.wheel]
+universal = ["pha"]
+
+[tool.hatch.metadata]
+allow-direct-references = true
